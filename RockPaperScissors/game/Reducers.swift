@@ -8,72 +8,72 @@
 let rockPaperScissorsReducer: Reducer<GameState, ChooseWeaponAction>
 = { state, action in
 
-    var state = state
+    var mutatingState = state
 
-    let turn = state.turn
+    let turn = mutatingState.turn
     switch turn.player {
     case .one:
 
         // create a play
         let play = Play(chosen: true, weapon: action.weapon)
-        state.player1Play = play
+        mutatingState.player1Play = play
 
         // pass the turn to the next player
-        state.turn = Turn(player: .two)
+        mutatingState.turn = Turn(player: .two)
 
         // change the message
-        state.message = .player2choose
+        mutatingState.message = .player2choose
 
     case .two:
 
         // create a play
         let play = Play(chosen: true, weapon: action.weapon)
-        state.player2Play = play
+        mutatingState.player2Play = play
 
         // calculate who won
-        let player1weapon = state.player1Play.weapon ?? .rock
-        let player2weapon = state.player2Play.weapon ?? .rock
+        let player1weapon = mutatingState.player1Play.weapon ?? .rock
+        let player2weapon = mutatingState.player2Play.weapon ?? .rock
 
         switch player1weapon {
         case .rock:
             switch player2weapon {
             case .rock:
-                state.result = .draw
-                state.message = .draw
+                mutatingState.result = .draw
+                mutatingState.message = .draw
             case .paper:
-                state.result = .player2wins
-                state.message = .player2wins
+                mutatingState.result = .player2wins
+                mutatingState.message = .player2wins
             case .scissors:
-                state.result = .player1wins
-                state.message = .player1wins
+                mutatingState.result = .player1wins
+                mutatingState.message = .player1wins
             }
         case .paper:
             switch player2weapon {
             case .rock:
-                state.result = .player1wins
-                state.message = .player1wins
+                mutatingState.result = .player1wins
+                mutatingState.message = .player1wins
             case .paper:
-                state.result = .draw
-                state.message = .draw
+                mutatingState.result = .draw
+                mutatingState.message = .draw
             case .scissors:
-                state.result = .player2wins
-                state.message = .player2wins
+                mutatingState.result = .player2wins
+                mutatingState.message = .player2wins
             }
         case .scissors:
             switch player2weapon {
             case .rock:
-                state.result = .player2wins
-                state.message = .player2wins
+                mutatingState.result = .player2wins
+                mutatingState.message = .player2wins
             case .paper:
-                state.result = .player1wins
-                state.message = .player1wins
+                mutatingState.result = .player1wins
+                mutatingState.message = .player1wins
             case .scissors:
-                state.result = .draw
-                state.message = .draw
+                mutatingState.result = .draw
+                mutatingState.message = .draw
             }
         }
     }
 
     // return the new state
-    return state
+    return mutatingState
 }
