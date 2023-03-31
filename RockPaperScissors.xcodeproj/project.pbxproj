@@ -12,10 +12,11 @@
 		2638C52029D76E9C00000694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2638C51F29D76E9C00000694 /* Assets.xcassets */; };
 		2638C52429D76E9C00000694 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2638C52329D76E9C00000694 /* Preview Assets.xcassets */; };
 		2638C52E29D76E9C00000694 /* RockPaperScissorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2638C52D29D76E9C00000694 /* RockPaperScissorsTests.swift */; };
-		26ADDCAD29D76F2400BE83A4 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26ADDCAC29D76F2400BE83A4 /* ReSwift */; };
 		26ADDCAF29D76F5900BE83A4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCAE29D76F5900BE83A4 /* AppState.swift */; };
-		26ADDCB129D7713E00BE83A4 /* ChooseWeaponAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCB029D7713E00BE83A4 /* ChooseWeaponAction.swift */; };
-		26ADDCB329D7718D00BE83A4 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCB229D7718D00BE83A4 /* AppReducer.swift */; };
+		26ADDCB129D7713E00BE83A4 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCB029D7713E00BE83A4 /* Actions.swift */; };
+		26ADDCB329D7718D00BE83A4 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCB229D7718D00BE83A4 /* Reducers.swift */; };
+		26ADDCB729D77C5600BE83A4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCB629D77C5600BE83A4 /* Store.swift */; };
+		26ADDCBB29D77E4600BE83A4 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ADDCBA29D77E4600BE83A4 /* Reducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,10 @@
 		2638C52929D76E9C00000694 /* RockPaperScissorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RockPaperScissorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2638C52D29D76E9C00000694 /* RockPaperScissorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsTests.swift; sourceTree = "<group>"; };
 		26ADDCAE29D76F5900BE83A4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		26ADDCB029D7713E00BE83A4 /* ChooseWeaponAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWeaponAction.swift; sourceTree = "<group>"; };
-		26ADDCB229D7718D00BE83A4 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		26ADDCB029D7713E00BE83A4 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		26ADDCB229D7718D00BE83A4 /* Reducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
+		26ADDCB629D77C5600BE83A4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		26ADDCBA29D77E4600BE83A4 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26ADDCAD29D76F2400BE83A4 /* ReSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				2638C51B29D76E9B00000694 /* RockPaperScissorsApp.swift */,
-				2638C51D29D76E9B00000694 /* ContentView.swift */,
-				26ADDCAE29D76F5900BE83A4 /* AppState.swift */,
-				26ADDCB029D7713E00BE83A4 /* ChooseWeaponAction.swift */,
-				26ADDCB229D7718D00BE83A4 /* AppReducer.swift */,
+				26ADDCBC29D77F0400BE83A4 /* game */,
+				26ADDCB829D77D8C00BE83A4 /* core */,
 				2638C51F29D76E9C00000694 /* Assets.xcassets */,
 				2638C52129D76E9C00000694 /* RockPaperScissors.entitlements */,
 				2638C52229D76E9C00000694 /* Preview Content */,
@@ -110,6 +110,26 @@
 			path = RockPaperScissorsTests;
 			sourceTree = "<group>";
 		};
+		26ADDCB829D77D8C00BE83A4 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				26ADDCB629D77C5600BE83A4 /* Store.swift */,
+				26ADDCBA29D77E4600BE83A4 /* Reducer.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		26ADDCBC29D77F0400BE83A4 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				2638C51D29D76E9B00000694 /* ContentView.swift */,
+				26ADDCAE29D76F5900BE83A4 /* AppState.swift */,
+				26ADDCB029D7713E00BE83A4 /* Actions.swift */,
+				26ADDCB229D7718D00BE83A4 /* Reducers.swift */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,7 +147,6 @@
 			);
 			name = RockPaperScissors;
 			packageProductDependencies = (
-				26ADDCAC29D76F2400BE83A4 /* ReSwift */,
 			);
 			productName = RockPaperScissors;
 			productReference = 2638C51829D76E9B00000694 /* RockPaperScissors.app */;
@@ -180,7 +199,6 @@
 			);
 			mainGroup = 2638C50F29D76E9B00000694;
 			packageReferences = (
-				26ADDCAB29D76F2400BE83A4 /* XCRemoteSwiftPackageReference "ReSwift" */,
 			);
 			productRefGroup = 2638C51929D76E9B00000694 /* Products */;
 			projectDirPath = "";
@@ -216,11 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26ADDCB129D7713E00BE83A4 /* ChooseWeaponAction.swift in Sources */,
+				26ADDCB129D7713E00BE83A4 /* Actions.swift in Sources */,
 				26ADDCAF29D76F5900BE83A4 /* AppState.swift in Sources */,
 				2638C51E29D76E9B00000694 /* ContentView.swift in Sources */,
+				26ADDCB729D77C5600BE83A4 /* Store.swift in Sources */,
+				26ADDCBB29D77E4600BE83A4 /* Reducer.swift in Sources */,
 				2638C51C29D76E9B00000694 /* RockPaperScissorsApp.swift in Sources */,
-				26ADDCB329D7718D00BE83A4 /* AppReducer.swift in Sources */,
+				26ADDCB329D7718D00BE83A4 /* Reducers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,25 +519,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		26ADDCAB29D76F2400BE83A4 /* XCRemoteSwiftPackageReference "ReSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 6.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		26ADDCAC29D76F2400BE83A4 /* ReSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 26ADDCAB29D76F2400BE83A4 /* XCRemoteSwiftPackageReference "ReSwift" */;
-			productName = ReSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2638C51029D76E9B00000694 /* Project object */;
 }

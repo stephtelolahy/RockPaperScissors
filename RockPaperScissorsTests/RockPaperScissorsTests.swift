@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import ReSwift
 @testable import RockPaperScissors
 
 final class RockPaperScissorsTests: XCTestCase {
@@ -14,31 +13,31 @@ final class RockPaperScissorsTests: XCTestCase {
     // testing whether a rule works.
     func test1() {
         
-        let store = Store<AppState>(reducer: appReducer, state: nil)
+        let sut = Store<AppState, ChooseWeaponAction>(initial: AppState(), reducer: rockPaperScissorsReducer)
         
         // Player 1 choose
-        store.dispatch(ChooseWeaponAction(weapon: .rock))
+        sut.dispatch(ChooseWeaponAction(weapon: .rock))
         
         // Player 2 choose
-        store.dispatch(ChooseWeaponAction(weapon: .scissors))
+        sut.dispatch(ChooseWeaponAction(weapon: .scissors))
         
         // Check result
-        XCTAssertEqual(store.state.result, .player1wins)
+        XCTAssertEqual(sut.state.result, .player1wins)
     }
-    
+
     // testing whether another rule works.
     func test2() {
-        
-        let store = Store<AppState>(reducer: appReducer, state: nil)
-        
+
+        let sut = Store<AppState, ChooseWeaponAction>(initial: AppState(), reducer: rockPaperScissorsReducer)
+
         // Player 1 choose
-        store.dispatch(ChooseWeaponAction(weapon: .rock))
-        
+        sut.dispatch(ChooseWeaponAction(weapon: .rock))
+
         // Player 2 choose
-        store.dispatch(ChooseWeaponAction(weapon: .paper))
-        
+        sut.dispatch(ChooseWeaponAction(weapon: .paper))
+
         // Check result
-        XCTAssertEqual(store.state.result, .player2wins)
+        XCTAssertEqual(sut.state.result, .player2wins)
     }
     
 }
