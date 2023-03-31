@@ -1,11 +1,11 @@
 //
-//  AppState.swift
+//  GameState.swift
 //  RockPaperScissors
 //
 //  Created by Hugues Telolahy on 31/03/2023.
 //
 
-struct AppState {
+struct GameState {
     var message: Message
     var turn: Turn
     var player1Play: Play

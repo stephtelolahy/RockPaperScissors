@@ -5,7 +5,7 @@
 //  Created by Hugues Telolahy on 31/03/2023.
 //
 
-let rockPaperScissorsReducer: Reducer<AppState, ChooseWeaponAction>
+let rockPaperScissorsReducer: Reducer<GameState, ChooseWeaponAction>
 = { state, action in
 
     var state = state

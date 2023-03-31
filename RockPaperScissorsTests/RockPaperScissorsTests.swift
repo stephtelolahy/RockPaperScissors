@@ -13,7 +13,7 @@ final class RockPaperScissorsTests: XCTestCase {
     // testing whether a rule works.
     func test1() {
         
-        let sut = Store<AppState, ChooseWeaponAction>(initial: AppState(), reducer: rockPaperScissorsReducer)
+        let sut = Store<GameState, ChooseWeaponAction>(initial: GameState(), reducer: rockPaperScissorsReducer)
         
         // Player 1 choose
         sut.dispatch(ChooseWeaponAction(weapon: .rock))
@@ -28,7 +28,7 @@ final class RockPaperScissorsTests: XCTestCase {
     // testing whether another rule works.
     func test2() {
 
-        let sut = Store<AppState, ChooseWeaponAction>(initial: AppState(), reducer: rockPaperScissorsReducer)
+        let sut = Store<GameState, ChooseWeaponAction>(initial: GameState(), reducer: rockPaperScissorsReducer)
 
         // Player 1 choose
         sut.dispatch(ChooseWeaponAction(weapon: .rock))

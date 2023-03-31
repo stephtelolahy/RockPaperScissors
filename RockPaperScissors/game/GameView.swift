@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  RockPaperScissors
 //
 //  Created by Hugues Telolahy on 31/03/2023.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-typealias RockPaperScissorsStore = Store<AppState, ChooseWeaponAction>
+typealias RockPaperScissorsStore = Store<GameState, ChooseWeaponAction>
 
-struct ContentView: View {
+struct GameView: View {
 
-    @StateObject private var store: RockPaperScissorsStore = .init(initial: AppState(), reducer: rockPaperScissorsReducer)
+    @StateObject private var store: RockPaperScissorsStore = .init(initial: GameState(), reducer: rockPaperScissorsReducer)
 
     var body: some View {
         VStack {
@@ -50,6 +50,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GameView()
     }
 }
