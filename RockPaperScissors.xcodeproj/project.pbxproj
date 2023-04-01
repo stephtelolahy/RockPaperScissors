@@ -85,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				2638C51B29D76E9B00000694 /* RockPaperScissorsApp.swift */,
+				26ADDCB829D77D8C00BE83A4 /* app */,
 				26ADDCBC29D77F0400BE83A4 /* game */,
-				26ADDCB829D77D8C00BE83A4 /* core */,
 				2638C51F29D76E9C00000694 /* Assets.xcassets */,
 				2638C52129D76E9C00000694 /* RockPaperScissors.entitlements */,
 				2638C52229D76E9C00000694 /* Preview Content */,
@@ -110,13 +110,13 @@
 			path = RockPaperScissorsTests;
 			sourceTree = "<group>";
 		};
-		26ADDCB829D77D8C00BE83A4 /* core */ = {
+		26ADDCB829D77D8C00BE83A4 /* app */ = {
 			isa = PBXGroup;
 			children = (
 				26ADDCB629D77C5600BE83A4 /* Store.swift */,
 				26ADDCBA29D77E4600BE83A4 /* Reducer.swift */,
 			);
-			path = core;
+			path = app;
 			sourceTree = "<group>";
 		};
 		26ADDCBC29D77F0400BE83A4 /* game */ = {
